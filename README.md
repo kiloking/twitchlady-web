@@ -1,3 +1,13 @@
+
+
+https://stephenlb.github.io/twitch-tv-obs-subtitles/subtitles.html?subkey=sub-c-79b0a26a-80a9-11e8-8f4a-96bbd71e7d14&pubkey=pub-c-fd9b97a4-7b78-4ae1-a21e-3614f2b6debe&channel=1637084821063370432120&style=background%3Ablack%3Bfont-weight%3A600%3Btext-transform%3Auppercase%3Btext-shadow%3Anone%3Bpadding%3A10px%3B
+
+
+
+
+https://stephenlb.github.io/twitch-tv-obs-subtitles/subtitles.html?subkey=sub-c-79b0a26a-80a9-11e8-8f4a-96bbd71e7d14&pubkey=pub-c-fd9b97a4-7b78-4ae1-a21e-3614f2b6debe&channel=1637084425866877902272&style=background%3Ablack%3Bfont-weight%3A600%3Btext-transform%3Auppercase%3Btext-shadow%3Anone%3Bpadding%3A10px%3Bftont-famliy%3A微軟正黑體%3B&language=zh-Hant
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

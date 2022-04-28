@@ -1,6 +1,12 @@
+import React from "react";
+import './App.scss'
+import { BrowserRouter , Routes, Route} from 'react-router-dom';
+import PublicPageLayout from '../Components/PublicPageLayout';
 import tmi from 'react-tmi'
 
-
+//pages
+import Home from '../Pages/Home';
+import TyperWriter from '../Pages/TyperWriter';
 function App() {
   const client = new tmi.Client({
     options: { debug: true, messagesLogLevel: "info" },
@@ -22,9 +28,14 @@ function App() {
     }
   });
   return (
-    <div className="App">
-     123
-    </div>
+    <BrowserRouter>
+      <Routes> 
+          <Route path="/"  element={<PublicPageLayout/>} >
+            <Route path="/" exact element={<Home/>}   /> 
+            <Route path="typewriter"  element={<TyperWriter/>}   /> 
+          </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
