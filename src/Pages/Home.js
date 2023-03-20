@@ -6,10 +6,19 @@ function Home() {
   const client = new tmi.Client({
     channels: ['yawara30'] // 這裡填寫你要擷取的頻道名稱
   });
+  const synth = window.speechSynthesis;
+  const createSpeak = (text) => {
+    
+    const u = new SpeechSynthesisUtterance();
+    u.text = text;
+    let voices = synth.getVoices();
+    synth.speak(u)
+  };
 
   useEffect(()=>{
     client.on('message', (channel, tags, message, self) => {
       console.log(`${tags['display-name']}: ${message}`);
+      createSpeak(message)
     });
     
     client.connect();
