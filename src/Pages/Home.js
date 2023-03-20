@@ -1,8 +1,19 @@
-import React,{useState} from 'react'
-import { Chat } from "react-tmi";
+import React,{useState,useEffect} from 'react'
+import tmi from 'tmi.js';
+
 function Home() {
   const [messages, setMessages] = useState([]);
-  const channel = "dada6621";
+  const client = new tmi.Client({
+    channels: ['yawara30'] // 這裡填寫你要擷取的頻道名稱
+  });
+
+  useEffect(()=>{
+    client.on('message', (channel, tags, message, self) => {
+      console.log(`${tags['display-name']}: ${message}`);
+    });
+    
+    client.connect();
+  },[])
   return (
     <div>
       <ul>
@@ -10,13 +21,7 @@ function Home() {
           <li key={index}>{message}</li>
         ))}
       </ul>
-      <Chat
-        channel={channel}
-        onMessage={(channel, userstate, message, self) => {
-          // 在這裡處理收到的聊天室訊息
-          setMessages((prevMessages) => [...prevMessages, message]);
-        }}
-      />
+
     </div>
   )
 }
