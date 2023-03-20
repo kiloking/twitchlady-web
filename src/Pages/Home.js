@@ -14,6 +14,14 @@ function Home() {
     let voices = synth.getVoices();
     synth.speak(u)
   };
+  function populateVoices() {
+    voices = synth.getVoices()
+    let lanlist = voices.map((lan) => {
+      return `<option value="${lan.name}">${lan.name} (${lan.lang})</option>`
+    })
+    voicesDropdown.innerHTML = lanlist.join('')
+  }
+  speechSynthesis.addEventListener('voiceschanged', populateVoices)
 
   useEffect(()=>{
     client.on('message', (channel, tags, message, self) => {
