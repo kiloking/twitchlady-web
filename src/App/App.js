@@ -1,9 +1,8 @@
 import React from "react";
-import './App.scss'
 import { BrowserRouter , Routes, Route} from 'react-router-dom';
 import PublicPageLayout from '../Components/PublicPageLayout';
 //pages
-import Home from '../Pages/Home';
+import Lady from '../Pages/Lady';
 import TyperWriter from '../Pages/TyperWriter';
 function App() {
  
@@ -11,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes> 
           <Route path="/"  element={<PublicPageLayout/>} >
-            <Route path="/" exact element={<Home/>}   /> 
+            <Route path="/" exact element={<Lady/>}   /> 
             <Route path="typewriter"  element={<TyperWriter/>}   /> 
           </Route>
       </Routes>
