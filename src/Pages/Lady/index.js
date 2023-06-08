@@ -31,6 +31,7 @@ function Index() {
       if(displayName  === 'Nightbot' || displayName  === 'StreamElements') return
       const msgItems = {
         name:tags['display-name'],
+        color:tags['color'],
         message:message
       }
       setMessages((prevMessages) => [...prevMessages, msgItems]);
@@ -57,9 +58,12 @@ function Index() {
     <div>
       <ul className=' space-y-2 m-3'>
         {messages.map((item, index) => (
-          <li key={index} className="text-2xl  ">
-            <span className='drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] text-white'>{item.name}</span> 
-            <span className='font-bold'>:{item.message}</span>
+          <li key={index} className="text-xl  ">
+            <span 
+              className="font-bold"
+              style={{color:item.color}}
+            >{item.name}</span> 
+            <span className=' font-bold'>:{item.message}</span>
           </li>
         ))}
       </ul>
